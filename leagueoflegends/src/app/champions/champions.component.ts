@@ -17,6 +17,7 @@ export class ChampionsComponent implements OnInit {
   constructor(private readonly championService: ChampionService) { }
 
   ngOnInit() {
+
     this.championService.getChampions().subscribe(
       (result: ChampionDTO[]) => {
         console.log(result);

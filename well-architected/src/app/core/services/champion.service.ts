@@ -1,9 +1,11 @@
-import { ChampionDTO } from './../model/ChampionDTO';
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
-@Injectable()
+import { ChampionDTO } from '../../shared/model/ChampionDTO';
+@Injectable({
+    providedIn: 'root'
+})
 export class ChampionService {
     proccesedData: any[] = [];
 

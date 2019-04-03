@@ -13,6 +13,7 @@ import { GameDetailComponent } from './game-detail/game-detail.component';
 import { ChampionsComponent } from './champions/champions.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { CustomBorderDirective } from './custom-border.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     StatsComponent,
     DashboardComponent,
     GameDetailComponent,
-    ChampionsComponent
+    ChampionsComponent,
+    CustomBorderDirective
   ],
   imports: [
     BrowserModule,
