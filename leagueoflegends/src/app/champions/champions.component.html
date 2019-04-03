@@ -1,0 +1,29 @@
+  <button type="button" (click)="loadData()">Load Data</button>
+  <button type="button" (click)="createRandomChampion()">Create Random Champion</button>
+
+  <div class="row">
+    <div class="col-md-12">
+        <input type="number" [(ngModel)]="id" />
+    </div>
+    <div class="col-md-12">
+      <input type="text" [(ngModel)]="name" />
+    </div>
+    <div class="col-md-12">
+        <input type="text" [(ngModel)]="title" />
+    </div>
+    <button type="button" (click)="createYourOwnChampion()">Add</button>
+  </div>
+  
+
+  
+  
+
+  <div *ngIf="!champData">
+    No hay datos
+  </div>
+
+  <div class="row" *ngIf="champData">
+    <div class="col-md-3" *ngFor="let champ of champData">
+      <img [src]="champ.portraitUrl">
+    </div>
+  </div>

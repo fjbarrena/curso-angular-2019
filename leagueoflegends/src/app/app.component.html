@@ -1,0 +1,22 @@
+<div id="main">
+  <div id="menu" style="width:20%; float: left">
+    <ul>
+      <li>
+        <a routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li>
+          <a routerLink="/champions">Champions</a>
+        </li>
+      <li>
+        <a routerLink="/games">Games</a>
+      </li>
+      <li>
+        <a routerLink="/stats">Stats</a>
+      </li>
+    </ul>
+  </div>
+
+  <div id="content" style="width: 79%; float: right">
+      <router-outlet></router-outlet>
+  </div>
+</div>
