@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
@@ -6,10 +7,15 @@ import { TestComponent } from './test/test.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [LoginComponent, PrivateComponent, TestComponent],
+  declarations: [
+    LoginComponent,
+    PrivateComponent,
+    TestComponent
+  ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class FeaturesModule { }

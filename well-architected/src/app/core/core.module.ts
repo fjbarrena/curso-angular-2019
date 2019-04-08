@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 import { GamesService } from './services/games.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,10 +9,12 @@ import { ChampionService } from './services/champion.service';
   declarations: [],
   providers: [
     ChampionService,
-    GamesService
+    GamesService,
+    AuthService
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class CoreModule { }

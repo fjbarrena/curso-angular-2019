@@ -1,7 +1,8 @@
+import { AuthService } from './auth.service';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ChampionDTO } from '../../shared/model/ChampionDTO';
 @Injectable({
     providedIn: 'root'
@@ -9,7 +10,8 @@ import { ChampionDTO } from '../../shared/model/ChampionDTO';
 export class ChampionService {
     proccesedData: any[] = [];
 
-    constructor(private readonly http: HttpClient) {
+    constructor(private readonly http: HttpClient,
+                private authService: AuthService) {
         this.getChampions();
     }
 
@@ -18,8 +20,15 @@ export class ChampionService {
     }
 
     getChampions(): Observable<ChampionDTO[]> {
+        let headers = new HttpHeaders();
+
+        headers = headers.set('Authorization',
+          'Bearer ' + this.authService.getCurrentUserToken() );
+
         const result = this.http.get<ChampionDTO[]>
-            ('http://localhost:3000/champions');
+            ('http://localhost:3000/champions'
+            , {headers: headers}
+        );
 
         result.subscribe( (data: ChampionDTO[]) => {
             data.forEach((item) => {
