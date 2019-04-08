@@ -1,0 +1,22 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Kelear",
+        "email": "kelear@iti.es",
+        "password": "n0tiene"
+      },
+      {
+        "id": 2,
+        "name": "Vicmara",
+        "email": "vicmara@iti.es",
+        "password": "n0tiene"
+      },
+      {
+        "id": 3,
+        "name": "Evokante",
+        "email": "evokante@iti.es",
+        "password": "n0tiene"
+      }
+    ]
+  }
