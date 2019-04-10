@@ -9,7 +9,7 @@ import { Users } from '../models/users.model';
 })
 export class UsersService {
 
-    private endpoint: string = 'http://localhost:3000/auth';
+    private endpoint: string = 'http://localhost:3000/users';
     private httpOptions: any =  {
         headers: new HttpHeaders({'Content-Type':  'application/json'})
     };
