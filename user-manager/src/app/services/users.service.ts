@@ -34,8 +34,8 @@ export class UsersService {
         return this.http.post<Users>(this.endpoint, user, this.httpOptions);
     }*/
 
-    deleteUser (user: Users): Observable<any> {
-        return this.http.delete<any>(`${this.endpoint}/${user.id}`, this.httpOptions);
+    deleteUser (id: number): Observable<any> {
+        return this.http.delete<any>(`${this.endpoint}/${id}`, this.httpOptions);
     }
 
 }

@@ -13,7 +13,7 @@
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
-          <td>{{ user.created_at }}</td>
+          <td>{{ user.created_at | epochParser }}</td>
           <td>
             <a [routerLink]="['/detail', user.id]" role="button" class="btn btn-info">Detalle</a>
           </td>
@@ -21,7 +21,7 @@
             <a [routerLink]="['/update', user.id]" role="button" class="btn btn-primary">Actualizar</a>
           </td>
           <td>
-            <a [routerLink]="['/delete', user.id]" role="button" class="btn btn-danger">Borrar</a>
+            <a href="#" role="button" class="btn btn-danger" (click)="deleteUser(user.id)">Borrar</a>
           </td>
         </tr>
       </table>
