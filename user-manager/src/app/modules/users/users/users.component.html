@@ -9,6 +9,9 @@
           <th>Fecha de creación</th>
           <th colspan="3">Acciones</th>
         </tr>
+        <tr *ngIf="users?.length <= 0">
+          <td colspan="7">No hay usuarios registrados</td>
+        </tr>
         <tr *ngFor="let user of users">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
@@ -21,7 +24,7 @@
             <a [routerLink]="['/update', user.id]" role="button" class="btn btn-primary">Actualizar</a>
           </td>
           <td>
-            <a href="#" role="button" class="btn btn-danger" (click)="deleteUser(user.id)">Borrar</a>
+            <a [routerLink]="['/delete', user.id]" href="#" role="button" class="btn btn-danger">Borrar</a>
           </td>
         </tr>
       </table>

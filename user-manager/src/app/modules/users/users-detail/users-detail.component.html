@@ -20,11 +20,11 @@
         </tr>
         <tr>
           <th>Creado</th>
-          <td>{{ user?.created_at }}...</td>
+          <td>{{ user?.created_at | epochParser }}</td>
         </tr>
         <tr>
           <th>Token</th>
-          <td>{{ user?.token | slice:0:130 }}...</td>
+          <td>{{ user?.token | slice:0:130 }}</td>
         </tr>
       </table>
   </div>

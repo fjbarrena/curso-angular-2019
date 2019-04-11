@@ -30,9 +30,9 @@ export class UsersService {
         return this.http.put(`${this.endpoint}/${user.id}`, user, this.httpOptions);
     }
 
-    /*addUser(user: Users): Observable<Users> {
+    createUser(user: Users): Observable<any> {
         return this.http.post<Users>(this.endpoint, user, this.httpOptions);
-    }*/
+    }
 
     deleteUser (id: number): Observable<any> {
         return this.http.delete<any>(`${this.endpoint}/${id}`, this.httpOptions);

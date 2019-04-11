@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "name": "1234sdfsdf",
-      "email": "kelear@iti.es",
-      "password": "n0tieneddd",
-      "created_at": "1554911874",
-      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImtlbGVhckBpdGkuZXMiLCJyb2xlIjoiYWRtaW4iLCJqdGkiOiIxNTQyZGQ5My01YWY4LTRkMTgtYTkyMS01ZmFiNDUzMDljOWQiLCJpYXQiOjE1NTQ3MjQwMTUsImV4cCI6MTU1NDcyNzcwNH0.cMJDapkARgeszzjOzgv9hS8QydI46mlBzZYq16TylGc",
+      "name": "Martín",
+      "email": "martin@martin.com",
+      "password": "martinmartin",
+      "created_at": "1554979578",
+      "token": "fgdfhdfh546464eygdye4645h",
       "id": 1
     }
   ]

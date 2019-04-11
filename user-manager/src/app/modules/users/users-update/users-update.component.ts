@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Users } from '../../../models/users.model';
 import { UsersService } from '../../../services/users.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-users-update',
@@ -40,21 +39,19 @@ export class UsersUpdateComponent implements OnInit {
           
           this.userForm  =  this.formBuilder.group({
             name: [user.name, Validators.required],
-            email: [user.email, Validators.email],
-            password: [user.password, Validators.minLength(5)],
-            created_at: [user.created_at, Validators.required],
+            email: [user.email, [Validators.required, Validators.email]],
+            password: [user.password, [Validators.required, Validators.minLength(5)]],
+            created_at: [user.created_at, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
             token: [user.token, Validators.required],
           });
 
         })
     });
-
-    
-
-
   }
 
-  get formControls() { return this.userForm.controls; }
+  get formControls() {
+    return this.userForm.controls;
+  }
 
 
   updateUser(){

@@ -3,41 +3,34 @@
     <h2>Editar Usuario: {{ user?.id }} <a routerLink="/" role="button" class="btn btn-default">Volver</a></h2>
 
     <form [formGroup]="userForm" (ngSubmit)="updateUser()">
-      <div class="form-group">
-        <label>Nombre</label>
-        <input type="text" class="form-control" placeholder="Nombre" formControlName="name"> 
-        <div *ngIf="isSubmitted && formControls.name.errors" class="requerido">
-          <div *ngIf="formControls.name.errors.required">Campo Nombre requrido</div>
-        </div>
+      <div class="form-group" [ngClass]="{'has-error' : isSubmitted && formControls.name.errors}">
+        <label class="control-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+        <span *ngIf="isSubmitted && formControls.name.errors" class="help-block">Campo Nombre requerido.</span>
+      </div>
 
+      <div class="form-group" [ngClass]="{'has-error' : isSubmitted && formControls.email.errors}">
+        <label class="control-label">Email</label>
+        <input type="text" class="form-control" placeholder="Email" formControlName="email">
+        <span *ngIf="isSubmitted && formControls.email.errors" class="help-block">Campo Email inválido.</span>
       </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" placeholder="Email" formControlName="email">
-        <div *ngIf="isSubmitted && formControls.email.errors" class="requerido">
-          <div *ngIf="formControls.email.errors.email">Campo Email inválido</div>
-        </div>
+
+      <div class="form-group" [ngClass]="{'has-error' : isSubmitted && formControls.password.errors}">
+        <label class="control-label">Contraseña</label>
+        <input type="text" class="form-control" placeholder="Contraseña" formControlName="password">
+        <span *ngIf="isSubmitted && formControls.password.errors" class="help-block">La longitud de la contraseña debe de ser de al menos 5 carácteres.</span>
       </div>
-      <div class="form-group">
-        <label>Contraseña</label>
-        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
-        <div *ngIf="isSubmitted && formControls.password.errors" class="requerido">
-          <div *ngIf="formControls.password.errors">La longitud de la contraseña es de al menos 5 caracteres</div>
-        </div>
+
+      <div class="form-group" [ngClass]="{'has-error' : isSubmitted && formControls.created_at.errors}">
+        <label class="control-label">Fecha de creación</label>
+        <input type="text" class="form-control" placeholder="Epoch Timestamp" formControlName="created_at">
+        <span *ngIf="isSubmitted && formControls.created_at.errors" class="help-block">Epoch timestamp inválido.</span>
       </div>
-      <div class="form-group">
-        <label>Fechas de creación</label>
-        <input type="text" class="form-control" placeholder="Fechas de creación" formControlName="created_at">
-        <div *ngIf="isSubmitted && formControls.created_at.errors" class="requerido">
-          <div *ngIf="formControls.created_at.errors.required">Campo reated_ad requrido</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Token</label>
-        <textarea class="form-control" rows="3" formControlName="token" ></textarea>
-        <div *ngIf="isSubmitted && formControls.token.errors" class="requerido">
-          <div *ngIf="formControls.token.errors.required">Campo token requrido</div>
-        </div>
+
+      <div class="form-group" [ngClass]="{'has-error' : isSubmitted && formControls.token.errors}">
+        <label class="control-label">Token</label>
+        <input type="text" class="form-control" placeholder="Token" formControlName="token">
+        <span *ngIf="isSubmitted && formControls.token.errors" class="help-block">Campo Token requerido.</span>
       </div>
       <button type="submit" class="btn btn-success">Update</button>
     </form>
