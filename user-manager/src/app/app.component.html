@@ -1,19 +1,18 @@
 <nav class="navbar navbar-default">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    
     <div class="navbar-header">
         <a routerLink="/" routerLinkActive="'active'" class="navbar-brand">Users Administration</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div>
       <ul class="nav navbar-nav navbar-right">
         <li><a routerLink="/" routerLinkActive="'active'">Users</a></li>
         <li><a routerLink="/chat" routerLinkActive="'active'">Chat</a></li>
-        <li><a routerLink="/logout" routerLinkActive="'active'">Logout</a></li>
+        <li><button class="btn btn-link navbar-btn" (click)="logout()">Logout</button></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 
 <div class="container">
